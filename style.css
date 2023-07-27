@@ -30,12 +30,36 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn span {
+  position: relative;
   color: #fff;
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+}
+
+.ripple {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #e7be08;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: rippleAnim 0.5s forwards;
+}
+
+@keyframes rippleAnim {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 210%;
+    height: 210%;
+  }
 }
